@@ -3,7 +3,7 @@ import 'package:clean_arch_flutter/core/usecase/usecase.dart';
 import 'package:clean_arch_flutter/features/auth/domain/entities/user.dart';
 import 'package:dartz/dartz.dart';
 
-import '../repositories/do_login_repository.dart';
+import '../repositories/do_login_repository_interface.dart';
 
 class DologinParams {
   final String email;
@@ -13,7 +13,7 @@ class DologinParams {
 }
 
 class DoLogin extends UseCase<User, DologinParams> {
-  final DoLoginRepository _repository;
+  final DoLoginRepositoryInterface _repository;
 
   DoLogin(this._repository);
   @override
