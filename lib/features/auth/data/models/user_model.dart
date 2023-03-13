@@ -18,7 +18,7 @@ class UserModel extends User {
   Map<String, dynamic> toMap() {
     return {
       'name': name,
-      'bornDate': bornDate.millisecondsSinceEpoch,
+      'bornDate': bornDate.toIso8601String(),
       'email': email,
       'pictureUrl': pictureUrl,
     };
