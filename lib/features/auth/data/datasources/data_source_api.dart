@@ -1,3 +1,4 @@
+import 'package:clean_arch_flutter/core/error/failure.dart';
 import 'package:clean_arch_flutter/features/auth/data/datasources/do_login_datasouce.dart';
 import 'package:clean_arch_flutter/features/auth/data/models/user_model.dart';
 import 'package:dio/dio.dart';
@@ -19,7 +20,7 @@ class DataSourceApi implements DoLoginDataSource {
       });
       return UserModel.fromMap(response.data);
     } catch (error) {
-      rethrow;
+      throw ServerFailure();
     }
   }
 }
